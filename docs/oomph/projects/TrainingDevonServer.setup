@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://de-mucevolve02/oomph/tasks/models/Git.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore"
+    name="training.devon.server"
+    label="training-devon-server">
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.training.devon.server"
+      location="${workspace.location/${scope.project.label}}"
+      remoteURI="${github.remote.uri}"
+      pushURI="${github.remote.uri}">
+    <description></description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="github.remote.uri"
+      storageURI="scope://Workspace">
+    <choice
+        value="https://github.com/${github.repo.owner}/${github.repo.name}.git"
+        label="HTTPS"/>
+    <choice
+        value="ssh://git@github:${github.repo.owner}/${github.repo.name}.git"
+        label="SSH"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="github.repo.owner"
+      defaultValue="devonfw"
+      storageURI="scope://Workspace"
+      label="Repository Owner"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="github.repo.name"
+      value="training-devon-server"
+      storageURI="scope://Workspace"
+      label="Repository Owner"/>
+  <setupTask
+      xsi:type="maven:MavenImportTask">
+    <sourceLocator
+        rootFolder="${git.clone.training.devon.server.location}"/>
+  </setupTask>
+  <stream name="develop"
+      label="Develop"/>
+  <stream name="master"
+      label="Master"/>
+  <stream name="reference-solution"
+      label="Reference Solution"/>
+  <logicalProjectContainer
+      xsi:type="setup:ProjectCatalog"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <description>The Open Application Standard Platform for Java</description>
+</setup:Project>
