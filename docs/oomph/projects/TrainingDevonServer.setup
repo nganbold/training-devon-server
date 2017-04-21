@@ -20,12 +20,13 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="github.remote.uri"
-      storageURI="scope://Workspace">
+      storageURI="scope://Workspace"
+      label="${scope.project.label} remote uri">
     <choice
-        value="https://github.com/${github.repo.owner}/${github.repo.name}.git"
+        value="https://github.com/${github.repo.owner}/training-devon-server.git"
         label="HTTPS"/>
     <choice
-        value="ssh://git@github:${github.repo.owner}/${github.repo.name}.git"
+        value="ssh://git@github:${github.repo.owner}/training-devon-server.git"
         label="SSH"/>
   </setupTask>
   <setupTask
@@ -33,13 +34,7 @@
       name="github.repo.owner"
       defaultValue="devonfw"
       storageURI="scope://Workspace"
-      label="Repository Owner"/>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="github.repo.name"
-      value="training-devon-server"
-      storageURI="scope://Workspace"
-      label="Repository Owner"/>
+      label="${scope.project.label} fork"/>
   <setupTask
       xsi:type="maven:MavenImportTask">
     <sourceLocator
