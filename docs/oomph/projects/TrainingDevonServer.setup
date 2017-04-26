@@ -26,7 +26,7 @@
         value="https://github.com/${github.repo.owner}/training-devon-server.git"
         label="HTTPS"/>
     <choice
-        value="ssh://git@github:${github.repo.owner}/training-devon-server.git"
+        value="ssh://git@github.com/${github.repo.owner}/training-devon-server.git"
         label="SSH"/>
   </setupTask>
   <setupTask
