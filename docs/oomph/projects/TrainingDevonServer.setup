@@ -48,6 +48,6 @@
       label="Reference Solution"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+      href="http://devonfw.github.io/devon-ide/oomph/projects/catalog_devonfw.setup#/"/>
   <description>The Open Application Standard Platform for Java</description>
 </setup:Project>
