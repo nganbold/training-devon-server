@@ -1,5 +1,22 @@
 package io.oasp.gastronomy.restaurant.offermanagement.logic.impl;
 
+import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import javax.annotation.security.RolesAllowed;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+
+import net.sf.mmm.util.exception.api.ObjectMismatchException;
+import net.sf.mmm.util.exception.api.ObjectNotFoundUserException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import io.oasp.gastronomy.restaurant.general.common.api.constants.PermissionConstants;
 import io.oasp.gastronomy.restaurant.general.logic.api.to.BinaryObjectEto;
 import io.oasp.gastronomy.restaurant.general.logic.base.AbstractComponentFacade;
@@ -27,24 +44,9 @@ import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductFilter;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductSearchCriteriaTo;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.ProductSortBy;
 import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SideDishEto;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SpecialEto;
+import io.oasp.gastronomy.restaurant.offermanagement.logic.api.to.SpecialSearchCriteriaTo;
 import io.oasp.module.jpa.common.api.to.PaginatedListTo;
-
-import java.sql.Blob;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
-import javax.validation.Valid;
-
-import net.sf.mmm.util.exception.api.ObjectMismatchException;
-import net.sf.mmm.util.exception.api.ObjectNotFoundUserException;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Implementation class for {@link Offermanagement}.
@@ -498,6 +500,34 @@ public class OffermanagementImpl extends AbstractComponentFacade implements Offe
   public void setSideDishDao(SideDishDao sideDishDao) {
 
     this.sideDishDao = sideDishDao;
+  }
+
+  @Override
+  public SpecialEto findSpecial(Long id) {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public PaginatedListTo<SpecialEto> findSpecialEtos(SpecialSearchCriteriaTo criteria) {
+
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public boolean deleteSpecial(Long specialId) {
+
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public SpecialEto saveSpecial(SpecialEto special) {
+
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }
