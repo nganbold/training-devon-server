@@ -20,6 +20,8 @@ public class SpecialEto extends AbstractEto implements Special {
 
   private Money specialPrice;
 
+  private String comment;
+
   @Override
   public String getName() {
 
@@ -124,4 +126,17 @@ public class SpecialEto extends AbstractEto implements Special {
     }
     return true;
   }
+
+  @Override
+  public String getComment() {
+
+    return comment;
+  }
+
+  @Override
+  public void setComment(String comment) {
+
+    this.comment = comment;
+  }
+
 }

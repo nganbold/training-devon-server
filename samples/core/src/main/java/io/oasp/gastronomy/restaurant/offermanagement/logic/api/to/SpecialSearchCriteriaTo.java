@@ -7,7 +7,6 @@ import io.oasp.module.jpa.common.api.to.SearchCriteriaTo;
 /**
  * This is the {@link SearchCriteriaTo search criteria} {@link net.sf.mmm.util.transferobject.api.TransferObject TO}
  * used to find {@link io.oasp.gastronomy.restaurant.offermanagement.common.api.Special}s.
- *
  */
 public class SpecialSearchCriteriaTo extends SearchCriteriaTo {
 
@@ -20,6 +19,8 @@ public class SpecialSearchCriteriaTo extends SearchCriteriaTo {
   private WeeklyPeriodEmbeddable activePeriod;
 
   private Money specialPrice;
+
+  private String comment;
 
   /**
    * The constructor.
@@ -67,6 +68,16 @@ public class SpecialSearchCriteriaTo extends SearchCriteriaTo {
   public void setSpecialPrice(Money specialPrice) {
 
     this.specialPrice = specialPrice;
+  }
+
+  public String getComment() {
+
+    return this.comment;
+  }
+
+  public void setComment(String comment) {
+
+    this.comment = comment;
   }
 
 }

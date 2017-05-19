@@ -23,6 +23,8 @@ public class SpecialEntity extends ApplicationPersistenceEntity implements Speci
 
   private String name;
 
+  private String comment;
+
   private OfferEntity offer;
 
   @Embedded
@@ -140,6 +142,22 @@ public class SpecialEntity extends ApplicationPersistenceEntity implements Speci
 
     // TODO Auto-generated method stub
 
+  }
+
+  /**
+   * @return comment
+   */
+  public String getComment() {
+
+    return this.comment;
+  }
+
+  /**
+   * @param comment new value of {@link #getcomment}.
+   */
+  public void setComment(String comment) {
+
+    this.comment = comment;
   }
 
 }
